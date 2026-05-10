@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Қазақ хандығы</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #121826, #070a12);
+    color:#eaeaea;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:90px 20px;
+    background: linear-gradient(120deg, #141e30, #243b55);
+    position:relative;
+    overflow:hidden;
+}
+
+header h1{
+    font-size:52px;
+    letter-spacing:2px;
+    animation: floatTitle 4s ease-in-out infinite;
+}
+
+header p{
+    color:#b8b8b8;
+    margin-top:10px;
+}
+
+/* floating effect */
+@keyframes floatTitle{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+/* background moving light */
+header::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(124,92,255,0.2);
+    filter:blur(80px);
+    top:-50px;
+    left:20%;
+    animation: moveLight 8s infinite alternate;
+}
+
+@keyframes moveLight{
+    from{transform:translateX(0);}
+    to{transform:translateX(200px);}
+}
+
+/* container */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+/* tabs */
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.tab-btn{
+    padding:10px 15px;
+    background:#1b2233;
+    border:1px solid #333;
+    color:#fff;
+    cursor:pointer;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.tab-btn:hover{
+    background:#2b3350;
+}
+
+.tab-btn.active{
+    background:#7c5cff;
+}
+
+/* tab content */
+.tab-content{
+    display:none;
+    animation: fadeUp 0.5s ease;
+}
+
+.tab-content.active{
+    display:block;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* cards */
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+    transition:0.4s;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* timeline moving line */
+.timeline{
+    position:relative;
+    margin-top:20px;
+    padding-left:30px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(#7c5cff,#00d4ff);
+    animation: lineMove 3s infinite alternate;
+}
+
+@keyframes lineMove{
+    from{opacity:0.6;}
+    to{opacity:1;}
+}
+
+.event{
+    margin:20px 0;
+    position:relative;
+}
+
+.event::before{
+    content:"";
+    position:absolute;
+    left:-6px;
+    top:5px;
+    width:12px;
+    height:12px;
+    background:#7c5cff;
+    border-radius:50%;
+}
+
+/* floating particles */
+.particle{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:#7c5cff;
+    border-radius:50%;
+    opacity:0.3;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-40px);}
+    100%{transform:translateY(0);}
+}
+
+/* footer */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+    border-top:1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Қазақ хандығы</h1>
+    <p>Тарихи деректер мен кезеңдер</p>
+
+    <!-- floating particles -->
+    <div class="particle" style="left:10%; top:60%;"></div>
+    <div class="particle" style="left:30%; top:40%;"></div>
+    <div class="particle" style="left:70%; top:50%;"></div>
+</header>
+
+<div class="container">
+
+<div class="tabs">
+    <button class="tab-btn active" onclick="openTab('t1')">Құрылуы</button>
+    <button class="tab-btn" onclick="openTab('t2')">Хандар</button>
+    <button class="tab-btn" onclick="openTab('t3')">Қоғам</button>
+    <button class="tab-btn" onclick="openTab('t4')">Соғыстар</button>
+    <button class="tab-btn" onclick="openTab('t5')">Маңызы</button>
+</div>
+
+<!-- TAB 1 -->
+<div id="t1" class="tab-content active">
+    <div class="card">
+        <h2>Қазақ хандығының құрылуы</h2>
+        <p>
+            Қазақ хандығы XV ғасырда Керей мен Жәнібек сұлтандардың Әбілхайыр хандығынан бөлінуінен пайда болды.
+            Бұл оқиға этникалық және саяси бірігудің бастамасы болды.
+        </p>
+        <p>
+            Шу мен Қозыбасы аймағы алғашқы орталыққа айналды. Қазақ атауы осы кезеңде толық қалыптасты.
+        </p>
+    </div>
+</div>
+
+<!-- TAB 2 -->
+<div id="t2" class="tab-content">
+    <div class="card">
+        <h2>Хандар дәуірі</h2>
+        <p><b>Керей, Жәнібек</b> – негізін қалаушылар.</p>
+        <p><b>Қасым хан</b> – мемлекетті күшейтті, заң жүйесін енгізді.</p>
+        <p><b>Хақназар хан</b> – жерлерді қайта біріктірді.</p>
+        <p><b>Тәуке хан</b> – Жеті жарғы заңын жасады.</p>
+    </div>
+</div>
+
+<!-- TAB 3 -->
+<div id="t3" class="tab-content">
+    <div class="card">
+        <h2>Қоғамдық құрылым</h2>
+        <p>Қазақ қоғамы төрт негізгі топтан тұрды:</p>
+        <ul>
+            <li>Хан – жоғарғы билік</li>
+            <li>Сұлтандар – басқарушылар</li>
+            <li>Билер – әділет және сот</li>
+            <li>Батырлар – әскери күш</li>
+        </ul>
+        <p>
+            Мал шаруашылығы негізгі экономика болды.
+        </p>
+    </div>
+</div>
+
+<!-- TAB 4 -->
+<div id="t4" class="tab-content">
+    <div class="card">
+        <h2>Соғыстар мен қауіптер</h2>
+        <p>
+            Қазақ хандығы жиі сыртқы қауіптерге ұшырады.
+        </p>
+        <ul>
+            <li>Жоңғар шапқыншылығы</li>
+            <li>Сырдария қалалары үшін күрес</li>
+            <li>Ішкі тайпалық қақтығыстар</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Жоңғар соғысы</h2>
+        <p>
+            XVIII ғасырда жоңғарлар қазақ жеріне үлкен қауіп төндірді.
+            Бұл кезең халық үшін ең ауыр уақыттардың бірі болды.
+        </p>
+    </div>
+</div>
+
+<!-- TAB 5 -->
+<div id="t5" class="tab-content">
+    <div class="card">
+        <h2>Тарихи маңызы</h2>
+        <p>
+            Қазақ хандығы – қазіргі Қазақстан мемлекеттілігінің негізі.
+        </p>
+        <p>
+            Ол ұлттық бірлікті, тіл мен мәдениетті сақтауда маңызды рөл атқарды.
+        </p>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    Қазақ хандығы туралы тарихи мәліметтер
+</footer>
+
+<script>
+function openTab(id){
+    let tabs = document.querySelectorAll(".tab-content");
+    let btns = document.querySelectorAll(".tab-btn");
+
+    tabs.forEach(t => t.classList.remove("active"));
+    btns.forEach(b => b.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+    event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
